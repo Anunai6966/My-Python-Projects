@@ -1,0 +1,27 @@
+def leap_yr(year):
+    if year%4==0:
+        #it might be a leap year
+        if year%100==0:
+            if year % 400 == 0:
+                return  "leap_year"
+            else:
+                print(f"{year} is not a leap year")
+
+        else:
+            return "leap_year"
+    else:
+        print(f"{year} is not a leap year")
+
+no_of_days={0:0,1:31,2:28,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
+year=int(input("please enter your year "))
+month=int(input("please enter your month  "))
+r=leap_yr(year)
+print(r)
+
+if r=="leap_year":
+    if month==2:
+        print(f"in {year} {month} month has 29 days")
+    else:
+        print(f"in {year} {month} month has {no_of_days[month]} days")
+else:
+    print(f"in {year} {month} month has {no_of_days[month]} days")
