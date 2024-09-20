@@ -1,0 +1,42 @@
+questions=[
+    {"text":"how do you save your python file","answer":"C"},
+    {"text":"what does python use","answer":"B"},
+    {"text":"what is the output of range(3)","answer":"A"},
+    {"text":"Which of the following is used to define a block of code in Python language?","answer":"D"}
+]
+options=[
+    ["A) .python","B) .pl","C) .py","D) .p"],
+    ["A) compiler ","B) interpreter","C) compiler and interpreter","D) jvm"],
+    ["A) 0,1,2","B) 1,2,3","C) 0,1,2,3","D) 4,4,4"],
+    ["A) key","B) bracket","C) '  ' ","D) indentation"]
+]
+score=0
+def check_ans(guess,answer):
+    if guess==answer:
+        return True
+    else:
+        return False
+print("WELCOME TO PYTHON QUIZZ")
+print("CHOOSE THE CORRECT OPTION")
+
+for question_num in range(len(questions)):
+    print("********************************")
+    print(questions[question_num]["text"])
+    for i in options[question_num]:
+        print(i)
+
+    guess=input("enter your answer").upper()
+    answer=questions[question_num]["answer"]
+
+    if check_ans(guess,answer):
+        print("correct answer")
+        score+=1
+        print(f"your score is {score}")
+
+    else:
+        print("wromg answer ")
+        print(f" your score is {score}")
+
+print("********************************")
+print("THE END ")
+print(f" Your final score is {score} \nyour percentage is{score/len(questions)*100}")
