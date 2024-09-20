@@ -1,0 +1,33 @@
+alphabets=['a',"b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+def encryption(text,key):
+    cipher_text=''
+    for i in text:
+        # print(i)
+        pos=alphabets.index(i)
+        # print(pos)
+        new_pos=(pos+key+1)%26
+        cipher_text+=alphabets[new_pos]
+    print(cipher_text)
+
+def decryption(text,key):
+    plain_text=''
+    for i in text:
+        pos=alphabets.index(i)
+        og_pos=(pos-key-1)%26
+        plain_text+=alphabets[og_pos]
+    print(plain_text)
+a=True
+
+while a:
+    b = input("type 'encrypt' to encrypt your data and 'decrypt' to decrypt your data\n 'NOTE':GIVE NO SPACE IN YOUR DATA\n")
+    c=input("Enter your data\n")
+    d=int(input("Enter your key\n"))
+    if b=="encrypt":
+        encryption(text=c,key=d)
+    elif b=="decrypt":
+        decryption(text=c,key=d)
+    e=input("Type 'yes' if you want to go again else type 'no' \n")
+    if e=="no":
+        a=False
+print("Bye Bye")
