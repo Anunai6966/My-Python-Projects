@@ -1,0 +1,7 @@
+print("Confused who's gonna pay the bill lemme help!")
+names=input("enter your names with comma between each name")
+nl=names.split(",")
+length=len(nl)
+import random
+ran=random.randrange(0,length)
+print(f"its on {nl[ran]}")
