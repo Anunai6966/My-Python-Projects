@@ -1,0 +1,101 @@
+import random
+
+print("HEY!\nLet's play HANGMAN\nYou have 6 lives. For each wrong guess, you lose a life.\nGOOD LUCK!!")
+
+# Hangman stages
+stages = ('''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "             |"
+       "             |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''', '''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "      |      |"
+       "             |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''', '''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "     /|      |"
+       "             |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''', '''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "     /|\\     |"
+       "             |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''', '''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "     /|\\     |"
+       "     /       |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''', '''
+       "-------------|"
+       "      |      |"
+       "      0      |"
+       "     /|\\     |"
+       "     / \\     |"
+       "             |"
+       "             |"
+       "-------------|"
+       "--------------"''')
+
+# Word pool
+bucket = ("apple", "banana", "orange", "mango", "pomegranate")
+
+# Choose a random word from the bucket
+choosen_word = random.choice(bucket)
+print(f"Word chosen! It's {len(choosen_word)} letters long.")
+
+# Initialize display with underscores for the length of the chosen word
+display = ['_'] * len(choosen_word)
+print(display)
+
+# Initialize lives and game status
+life = 6
+gameover = False
+
+# Game loop
+while not gameover:
+    guess = input("Guess a letter: ").lower()
+
+    # Check if guess is in the chosen word
+    if guess in choosen_word:
+        for i in range(len(choosen_word)):
+            if choosen_word[i] == guess:
+                display[i] = guess
+        print(display)
+    else:
+        # Wrong guess, lose a life
+        life -= 1
+        print(f"Wrong guess. You lost a life! Remaining lives: {life}")
+        print(stages[6 - life])
+
+    # Check if the player lost
+    if life == 0:
+        gameover = True
+        print(f"0 lives... YOU LOSE! The word was '{choosen_word}'.\nBETTER LUCK NEXT TIME.")
+
+    # Check if the player won
+    if '_' not in display:
+        gameover = True
+        print(f"Congratulations! You guessed the word '{choosen_word}' and won!")
