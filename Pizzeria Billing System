@@ -1,0 +1,34 @@
+print("Welcome to Anunai's pizza")
+print("We serve 3 different sizes of our signature pizza")
+print("what size of Anunai's special pizza would you like to have")
+p=input("Small, Medium, Large ?")
+if (p=="small"):
+    bill=125
+    print("cost of pizza is 125/-")
+    pep=input("Would you like to add some extra perriperri yes/no" )
+    if (pep=="yes"):
+        bill=bill+30
+        print("125+30=155/-")
+    print(f"cost of your pizza is {bill}/-")
+elif (p=="medium"):
+    bill=170
+    print("cost of the pizza is 170/-")
+    pep=input("would you like to add some extra perri perri yes/no?")
+    if(pep=="yes"):
+        bill=bill+50
+        print("170+50=220/-")
+    print(f"cost of your pizza is {bill}/-")
+elif (p=="large"):
+    bill=300
+    print("cost of pizza is 300/-")
+    pep=input("would you like to add some extra perriperri yes/no")
+    if (pep=="yes"):
+        bill=bill+50
+        print("300+50=350/-")
+    print(f"cost of your pizza is {bill}/-")
+che=input("Would you like to add extra cheese? yes/no")
+if (che=="yes"):
+    bill=bill+20
+    print(f"cost of your pizza is {bill}/-")
+print(f"please pay {bill}/-")
+print("Thank you")
