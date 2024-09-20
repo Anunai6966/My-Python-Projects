@@ -1,0 +1,27 @@
+print("welcome to love calculator")
+mn=input("enter his name")
+mn=mn.lower()
+print(mn)
+fn=input("enter her name")
+fn=fn.lower()
+print(fn)
+cn=mn+fn
+print(cn)
+t=cn.count("t")
+r=cn.count("r")
+u=cn.count("u")
+e=cn.count("e")
+l=cn.count("l")
+o=cn.count("o")
+v=cn.count("v")
+e=cn.count("e")
+sum=(t+r+u+e+l+o+v+e)
+print(sum)
+per=sum/8*100
+print(f"{per}% is your love percentage")
+if (per<10 or per>90):
+    print("you both go along like coke and mentos")
+elif (per>10 and per<40 ):
+    print("you are cute lovely couple")
+elif (per>40 and per<90):
+    print("you are a lovely fighting couple")
