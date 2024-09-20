@@ -1,0 +1,57 @@
+import random
+def easy():
+    a=True
+    life=10
+    secret = random.randint(1, 50)
+    while a:
+        print(f"you have '{life}' lifes remaining to guess the number")
+        guess=int(input("make a guess: "))
+
+        if guess<secret:
+            print("your guess is 'too low!!'")
+            life-=1
+        if guess>secret:
+            print("your guess is 'too high!!'")
+            life-=1
+        if guess==secret:
+            print(f"yes the number was '{secret}'.\nand your guess: '{guess}' is right!!!\nYOU WIN!!!\n:)")
+            a=False
+        if life==0:
+            print("out of lifes :(")
+            a=False
+def hard():
+    a=True
+    life=5
+    secret = random.randint(1, 50)
+    while a:
+        print(f"you have '{life}' lifes remaining to guess the number")
+        guess=int(input("make a guess: "))
+
+        if guess<secret:
+            print("your guess is 'too low!!'")
+            life-=1
+        if guess>secret:
+            print("your guess is 'too high!!'")
+            life-=1
+        if guess==secret:
+            print(f"yes the number was '{secret}'.\n and your guess: '{guess}' is right!!!\nYOU WIN!!!\n:)")
+            a=False
+        if life==0:
+            print("out of lifes :(")
+            a=False
+print("welcome to guess the number")
+def call():
+    again()
+def again():
+    print("lemme guess a number from 1 to 50")
+    difficulty=input("choose the level of difficulty...\ntype 'easy' or 'hard': ").lower()
+    if difficulty=="easy":
+        easy()
+    if difficulty=="hard":
+        hard()
+    again=input("do want to play again...\ntype 'yes' or 'no': ").lower()
+
+    if again=="yes":
+        print("here you go again..\nGood luck!!")
+        call()
+again()
