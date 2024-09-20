@@ -1,0 +1,25 @@
+print("ROCK PAPER SCISSOR")
+uc=int(input("0 for rock \n1 for paper \n2 for scissors \n please enter your choice"))
+import random
+cc=random.randint(0,2)
+if (cc == 0):
+    print ("0 ROCK ")
+elif (cc == 1):
+    print("1 PAPER")
+elif (cc == 2):
+    print("2 SCISSOR")
+
+if (uc == cc):
+    print("DRAW")
+elif (uc==0 and cc==1):
+    print("COMPUTER WINS")
+elif (uc==0 and cc==2):
+    print("USER WINS")
+elif (uc==1 and cc==0):
+    print("USER WINS")
+elif (uc==1 and cc==2):
+    print("COMPUTER WINS")
+elif (uc==2 and cc==0):
+    print("COMPUTER WINS")
+elif (uc==2 and cc==1):
+    print("USER WINS")
